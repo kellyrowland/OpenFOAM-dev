@@ -74,7 +74,13 @@ OPENMPI)
 
 SYSTEMMPI)
     export FOAM_MPI=mpi-system
-
+    export MPI_ROOT=$CRAY_MPICH_PREFIX
+    export MPI_ARCH_FLAGS=""
+    export MPI_ARCH_INC=""
+    export MPI_ARCH_LIBS=""
+#    export MPI_ARCH_FLAGS="-DOMPI_SKIP_MPICXX"
+#    export MPI_ARCH_INC="-isystem $MPI_ROOT/include"
+#    export MPI_ARCH_LIBS="-L$MPI_ROOT/lib -lmpi"
     if [ -z "$MPI_ROOT" ]
     then
         echo 1>&2
